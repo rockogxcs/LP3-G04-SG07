@@ -16,9 +16,10 @@ public class Principal {
 			if (rp == 1234)
 				fl = true;
 		}while(vida < intentos && !fl );
-		if (fl == true)
-			System.out.println("Adivinaste!!!!! ");
-		else
+		if (fl == true) {
+			System.out.println("Adivinaste!!!!! Ganaste un premio!! ");
+			System.out.println("Usted ha ganado un iPhone 4 + Xbox 360.");
+		}else
 			System.out.println("Ups, perdiste...");
 	}
 
