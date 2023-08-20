@@ -17,8 +17,14 @@ public class Principal {
 				fl = true;
 		}while(vida < intentos && !fl );
 		if (fl == true) {
-			System.out.println("Adivinaste!!!!! Ganaste un premio!! ");
-			System.out.println("Usted ha ganado un iPhone 4 + Xbox 360.");
+			System.out.println("Adivinaste en " + vida + " intentos!!!!");
+			if (vida == 1){
+				System.out.println("Usted ha ganado un pasaje al Caribe.");
+			}else if (vida == 2){
+				System.out.println("Usted ha ganado una visita al museo más cercano a su casa.");
+			}else{
+				System.out.println("Usted ha ganado una entrada al cine.");
+			}
 		}else
 			System.out.println("Ups, perdiste...");
 	}
