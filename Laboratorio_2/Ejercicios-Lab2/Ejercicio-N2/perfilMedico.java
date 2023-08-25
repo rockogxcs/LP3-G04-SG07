@@ -1,123 +1,120 @@
-package Ejercicio2;
-
 public class perfilMedico {
-    private String firstName;
-    private String lastName;
+    private String nombre;
+    private String apellido;
     private String genero;
     private int dDate;
     private int mDate;
     private int yDate;
-    private double height;
-    private double weight;
+    private double altura;
+    private double peso;
 
     private int yearsOld;
 
-    public perfilMedico (String firstName_, String lastName_, String genero_, int dDate_, int mDate_, int yDate_, double height_, double weight_){
-        this.firstName = firstName_;
-        this.lastName = lastName_;
-        this.genero = genero_;
-        this.dDate = dDate_;
-        this.mDate = mDate_;
-        this.yDate = yDate_;
-        this.height = height_;
-        this.weight = weight_;
+    public perfilMedico (String nombre, String apellido, String genero, int dDate, int mDate, int yDate, double altura, double peso){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.genero = genero;
+        this.dDate = dDate;
+        this.mDate = mDate;
+        this.yDate = yDate;
+        this.altura = altura;
+        this.peso = peso;
     }
 
-    public void setFirstName (String firstName_){
-        this.firstName = firstName_;
+    public void setNombre (String nombre){
+        this.nombre = nombre;
     }
 
-    public String getFirstName (){
-        return this.firstName;
+    public String getNombre (){
+        return this.nombre;
     }
 
-    public void setLastName (String lastName_){
-        this.lastName = lastName_;
+    public void setApellido (String apellido){
+        this.apellido = apellido;
     }
 
-    public String getLastName (){
-        return this.lastName;
+    public String getApellido (){
+        return this.apellido;
     }
 
-    public void setGenero(String genero_){
-        this.genero = genero_;
+    public void setGenero(String genero){
+        this.genero = genero;
     }
 
     public String getGenero(){
         return this.genero;
     }
 
-    public void setDayDate (int dDate_){
-        this.dDate = dDate_;
+    public void setDia (int dDate){
+        this.dDate = dDate;
     }
 
-    public int getDayDate (){
+    public int getDia (){
         return this.dDate;
     }
 
-    public void setMonthDate (int mDate_){
-        this.mDate = mDate_;
+    public void setMes (int mDate){
+        this.mDate = mDate;
     }
 
-    public int getMonthDate (){
+    public int getMes (){
         return this.mDate;
     }
 
-    public void setYeardate (int yDate_){
-        this.yDate = yDate_;
+    public void setAnio (int yDate){
+        this.yDate = yDate;
     }
 
-    public int getYearDate (){
+    public int getAnio (){
         return this.yDate;
     }
 
-    public void setHeight (double height_){
-        this.height = height_;
+    public void setAltura (double altura){
+        this.altura = altura;
     }
 
-    public double getHeight (){
-        return this.height;
+    public double getAltura (){
+        return this.altura;
     }
 
-    public void setWeight (double weight_){
-        this.weight = weight_;
+    public void setPeso (double peso){
+        this.peso = peso;
     }
 
-    public double getWeight (){
-        return this.weight;
+    public double getPeso (){
+        return this.peso;
     }
 
-    public void calcYO(){
+    public void calcularEdad(){
         int year = 2023;
 
         int calcY = year - yDate;
         yearsOld = calcY;
-        int calcD = 23 - dDate;
-        int calcM = 8 - mDate;
         
-        System.out.println("Usted tiene " + calcY + " años con " + calcM + " meses y " + calcD + " días.");
+        System.out.println("Usted tiene " + calcY + " años.");
     }
 
-    public void calcFMC (){
-        double rslt = 208 - 0.7 * yearsOld;
+    public void calcularFMC (){
+        double rslt = 208 - (0.7 * yearsOld);
 
-        System.out.println("La frecuencia Cardiaca del paciente es: " + rslt);
+        System.out.println("Su Frecuencia Cardiaca Máxima (FMC) es: " + rslt);
     }
 
-    public void calcIMC (){
-        double resultado = getWeight() / getHeight();
+    public void calcularIMC (){
+        double alturaMetros = getAltura() / 100.0; // Convertir cm a m
+        double resultado = getPeso() / (alturaMetros * alturaMetros);
 
-        System.out.println("Su masa corporal es: " + resultado);
+        System.out.println("Su Indice de Masa Corporal (ICM) es: " + resultado);
     }
 
-    public void showInfo(){
-        System.out.println("\n  DATOS:\nNombre: " + getFirstName() + "\nApellidos: " + getLastName() + "\nGenero: " + getGenero() + "\nFecha de nacimiento: " + getDayDate() + "/" + getMonthDate() + "/" + getYearDate() + "\nAltura: " + getHeight() + " cm \nPeso: " + getWeight() + " kg");
-        System.out.println("\n\n  CALCULOS:\n");
-        calcYO();
-        calcIMC();
-        calcFMC();
-        System.out.println("\n");
+    public void mostrarInfo(){
+        System.out.println("\n     DATOS:");
+        System.out.println("================");
+        System.out.println("Nombre: " + getNombre() + "\nApellido: " + getApellido() + "\nGenero: " + getGenero() + "\nFecha de nacimiento: " + getDia() + "/" + getMes() + "/" + getAnio() + "\nAltura: " + getAltura() + " cm \nPeso: " + getPeso() + " kg");
+        System.out.println("\n   RESULTADOS:");
+        System.out.println("================");
+        calcularEdad();
+        calcularIMC();
+        calcularFMC();
     }
-
 }
-
