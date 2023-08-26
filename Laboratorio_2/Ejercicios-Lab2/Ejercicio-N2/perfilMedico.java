@@ -94,17 +94,17 @@ public class perfilMedico {
         System.out.println("Usted tiene " + calcY + " años.");
     }
 
-    public void calcularFMC (){
+    public void calcularFCM (){
         double rslt = 208 - (0.7 * yearsOld);
 
-        System.out.println("Su Frecuencia Cardiaca Máxima (FMC) es: " + rslt);
+        System.out.println("Su Frecuencia Cardiaca Máxima (FCM) es: " + rslt);
     }
 
     public void calcularIMC (){
         double alturaMetros = getAltura() / 100.0; // Convertir cm a m
         double resultado = getPeso() / (alturaMetros * alturaMetros);
 
-        System.out.println("Su Indice de Masa Corporal (ICM) es: " + resultado);
+        System.out.println("Su Indice de Masa Corporal (IMC) es: " + resultado);
     }
 
     public void mostrarInfo(){
@@ -115,6 +115,6 @@ public class perfilMedico {
         System.out.println("================");
         calcularEdad();
         calcularIMC();
-        calcularFMC();
+        calcularFCM();
     }
 }
