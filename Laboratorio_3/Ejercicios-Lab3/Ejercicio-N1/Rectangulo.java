@@ -7,6 +7,10 @@ public class Rectangulo {
         this.esquina2 = esquina2;
     }
 
+    public Rectangulo(int base, int altura) {
+        this(new Coordenada(), new Coordenada(base, altura));
+    }
+
     public Coordenada getEsquina1() {
         return esquina1;
     }
