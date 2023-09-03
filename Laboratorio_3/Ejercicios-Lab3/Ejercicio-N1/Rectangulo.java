@@ -1,10 +1,13 @@
 public class Rectangulo {
     private Coordenada esquina1;
     private Coordenada esquina2;
+    private static String ultimoColor = "rojo";
+    private String color;
 
     public Rectangulo(Coordenada esquina1, Coordenada esquina2) {
         this.esquina1 = esquina1;
         this.esquina2 = esquina2;
+        setColor();
     }
 
     public Rectangulo(int base, int altura) {
@@ -28,6 +31,19 @@ public class Rectangulo {
     }
     
     public String toString() {
-        return "Rectangulo: " + esquina1.toString() + " - " + esquina2.toString();
+        return "Rectangulo: " + esquina1.toString() + " - " + esquina2.toString() + " Color: " + color;
+    }
+
+    private void setColor() {
+        if (ultimoColor.equals("verde")) {
+            color = "amarillo";
+            ultimoColor = "amarillo";
+        } else if (ultimoColor.equals("amarillo")) {
+            color = "rojo";
+            ultimoColor = "rojo";
+        } else if (ultimoColor.equals("rojo")) {
+            color = "verde";
+            ultimoColor = "verde";
+        }
     }
 }
