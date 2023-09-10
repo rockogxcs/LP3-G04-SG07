@@ -25,7 +25,8 @@ public class Main
             System.out.println("3. Sumar columna");
             System.out.println("4. Sumar diagonal principal");
             System.out.println("5. Sumar diagonal inversa");
-            System.out.println("6. Salir");
+            System.out.println("6. Calcular la media de la matriz");
+            System.out.println("7. Salir");
             System.out.println("Elije una opcion");
             opcion = sn.nextInt();
             switch (opcion) {
@@ -76,7 +77,17 @@ public class Main
                         System.out.println("Debes rellenar la matriz primero");
                     }
                     break;
+                    
                 case 6:
+                    if (rellenado) {
+                        double media = calcularMediaMatriz(matriz);
+                        System.out.println("La media de todos los valores de la matriz es: " + media);
+                    } else {
+                        System.out.println("Debes rellenar la matriz primero");
+                    }
+                    break;
+                
+                case 7:
                     salir = true;
                     break;
                 default:
@@ -169,5 +180,25 @@ public class Main
     
         return suma;
     }
-
+    
+    /**
+    * Calcular la media de todos los valores
+    *
+    * @param matriz
+    * @return
+    */
+    
+    public static double calcularMediaMatriz(int[][] matriz) {
+        int sumaTotal = 0;
+        int totalValores = matriz.length * matriz[0].length;
+    
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                sumaTotal += matriz[i][j];
+            }
+        }
+    
+        double media = (double) sumaTotal / totalValores;
+        return media;
+    }
 }
