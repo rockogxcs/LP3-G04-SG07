@@ -24,7 +24,8 @@ public class Main
             System.out.println("2. Sumar fila");
             System.out.println("3. Sumar columna");
             System.out.println("4. Sumar diagonal principal");
-            System.out.println("5. Salir");
+            System.out.println("5. Sumar diagonal inversa");
+            System.out.println("6. Salir");
             System.out.println("Elije una opcion");
             opcion = sn.nextInt();
             switch (opcion) {
@@ -69,6 +70,13 @@ public class Main
                     }
                     break;
                 case 5:
+                    if (rellenado) {
+                        System.out.println("La suma de la diagonal inversa es: " + sumaDiagonalInversa(matriz));
+                    } else {
+                        System.out.println("Debes rellenar la matriz primero");
+                    }
+                    break;
+                case 6:
                     salir = true;
                     break;
                 default:
@@ -143,4 +151,23 @@ public class Main
         }
         return suma;
     }
+    
+    /**
+    * Suma los valores de la diagonal inversa
+    *
+    * @param matriz
+    * @return
+    */
+    
+    public static int sumaDiagonalInversa(int[][] matriz) {
+        int suma = 0;
+        int n = matriz.length;
+    
+        for (int i = 0; i < n; i++) {
+            suma += matriz[i][n - 1 - i];
+        }
+    
+        return suma;
+    }
+
 }
