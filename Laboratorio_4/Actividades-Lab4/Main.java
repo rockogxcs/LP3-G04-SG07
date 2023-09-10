@@ -11,7 +11,7 @@ public class Main
         
         //Variables utilizadas
         boolean salir = false;
-        int opcion, fila;
+        int opcion, fila, columna;
         
         //Utilizado para indicar si hemos entrado en la 1ª opcion
         boolean rellenado = false;
@@ -22,7 +22,8 @@ public class Main
             System.out.println("Menu");
             System.out.println("1. Rellenar Matriz");
             System.out.println("2. Sumar fila");
-            System.out.println("3. Salir");
+            System.out.println("3. Sumar columna");
+            System.out.println("4. Salir");
             System.out.println("Elije una opcion");
             opcion = sn.nextInt();
             switch (opcion) {
@@ -38,12 +39,26 @@ public class Main
                             System.out.println("Elige una fila");
                             fila = sn.nextInt();
                         } while (!(fila >= 0 && fila < matriz.length));
-                        System.out.println("La suma de los valores de la fila " + fila + " es: " + sumaFila(matriz, fila));
+                        System.out.println("La suma de los valores de la fila " + fila 
+                        + " es: " + sumaFila(matriz, fila));
                     } else {
                         System.out.println("Debes rellenar la matriz primero");
                     }
                     break;
                 case 3:
+                    if (rellenado) {
+                        //Validamos la columna
+                        do {
+                            System.out.println("Elige una columna");
+                            columna = sn.nextInt();
+                        } while (!(columna >= 0 && columna < matriz[0].length));
+                        System.out.println("La suma de los valores de la columna " + columna 
+                        + " es: " + sumaColumna(matriz, columna));
+                    } else {
+                        System.out.println("Debes rellenar la matriz primero");
+                    }
+                    break;
+                case 4:
                     salir = true;
                     break;
                 default:
@@ -82,6 +97,23 @@ public class Main
         
         for (int j = 0; j < matriz.length; j++) {
             suma += matriz[fila][j];
+        }
+        return suma;
+    }
+
+    /**
+    * Suma los valores de una determinada columna
+    *
+    * @param matriz
+    * @param columna
+    * @return
+    */
+    
+    public static int sumaColumna(int[][] matriz, int columna) {
+        int suma = 0;
+        
+        for (int i = 0; i < matriz.length; i++) {
+            suma += matriz[i][columna];
         }
         return suma;
     }
