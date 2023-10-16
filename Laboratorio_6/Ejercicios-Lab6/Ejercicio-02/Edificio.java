@@ -1,18 +1,16 @@
-package Lab6.Ejercicios;
+class Edificio implements ImpactoEcologico {
+    int numeroDePisos;
+    int consumoDeEnergia;
 
-public class Edificio implements ImpactoEcologico {
-    public int desechosOrganicos;
-    public int numPersonas;
-    public double factorEmision = 0.5;
-
-    public Edificio(int desechosOrganicos_, int numPersonas_){
-        this.desechosOrganicos = desechosOrganicos_;
-        this.numPersonas = numPersonas_;
+    public Edificio(int numeroDePisos, int consumoDeEnergia) {
+        this.numeroDePisos = numeroDePisos;
+        this.consumoDeEnergia = consumoDeEnergia;
     }
 
-    public double obtenerImpactoEcologico(){
-        double datoActividad = (desechosOrganicos * numPersonas) / 2;
-        double impacto_Ecologico = datoActividad + factorEmision;
-        return impacto_Ecologico; 
+    @Override
+    public double obtenerImpactoEcologico() {
+        double DATO_ACTIVIDAD = (numeroDePisos * consumoDeEnergia);
+        double FACTOR_DE_EMISION = 0.5;
+        return DATO_ACTIVIDAD * FACTOR_DE_EMISION;
     }
 }

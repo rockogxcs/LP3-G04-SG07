@@ -1,18 +1,14 @@
-package Lab6.Ejercicios;
+class Bicicleta implements ImpactoEcologico {
+    int distanciaRecorrida;
 
-public class Bicicleta implements ImpactoEcologico{
-    public int llantasUsadas;
-    public double distanciaRecorrida;
-    public double factorEmision = 0.05;
-
-    public Bicicleta(int llantasUsadas_, double distanciaRecorrida_){
-        this.llantasUsadas = llantasUsadas_;
-        this.distanciaRecorrida = distanciaRecorrida_;
+    public Bicicleta(int distanciaRecorrida) {
+        this.distanciaRecorrida = distanciaRecorrida;
     }
 
-    public double obtenerImpactoEcologico(){
-        double datoActividad = llantasUsadas * distanciaRecorrida / 10;
-        double impacto_Ecologico = datoActividad * factorEmision;
-        return impacto_Ecologico;
+    @Override
+    public double obtenerImpactoEcologico() {
+        double DATO_ACTIVIDAD = distanciaRecorrida;
+        double FACTOR_DE_EMISION = 0.05;
+        return DATO_ACTIVIDAD * FACTOR_DE_EMISION;
     }
 }

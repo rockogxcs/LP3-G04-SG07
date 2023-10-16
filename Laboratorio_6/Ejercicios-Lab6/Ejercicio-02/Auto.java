@@ -1,20 +1,16 @@
-package Lab6.Ejercicios;
+class Auto implements ImpactoEcologico {
+    int kilometraje;
+    int consumoCombustible;
 
-public class Auto implements ImpactoEcologico {
-    public double emicionCO2;
-    public int combustible;
-    public double factorEmision = 0.3;
-
-    public Auto(double emicionCO2_, int combustible_){
-        this.emicionCO2 = emicionCO2_;
-        this.combustible = combustible_;
+    public Auto(int kilometraje, int consumoCombustible) {
+        this.kilometraje = kilometraje;
+        this.consumoCombustible = consumoCombustible;
     }
 
-    public double obtenerImpactoEcologico(){
-        double datoActividad = (emicionCO2 * combustible) * 10;
-        double impacto_Ecologico = datoActividad * factorEmision;
-        return impacto_Ecologico;
+    @Override
+    public double obtenerImpactoEcologico() {
+        double DATO_ACTIVIDAD = (kilometraje * consumoCombustible);
+        double FACTOR_DE_EMISION = 0.3;
+        return DATO_ACTIVIDAD * FACTOR_DE_EMISION;
     }
 }
-
-

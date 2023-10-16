@@ -1,5 +1,3 @@
-package Lab6.Ejercicios;
-
-public interface ImpactoEcologico {
+interface ImpactoEcologico {
     double obtenerImpactoEcologico();
 }
