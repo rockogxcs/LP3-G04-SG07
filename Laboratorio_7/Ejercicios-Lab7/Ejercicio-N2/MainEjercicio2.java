@@ -1,7 +1,7 @@
 public class MainEjercicio2{
 	public static void main(String[] args) {
 		try{
-		    System.out.println(método(“42”));
+		    System.out.println(metodo(“w”));
 		}
 		catch (Exception e) {
 		    System.out.println("Excepcion en metodo()");
