@@ -11,7 +11,7 @@ public class MainEjercicio1{
 	        else
 	            throw new Exception("El indice " + j + " no existe en el vector");
 	    }
-	    catch(RuntimeException exc){
+	    catch(Exception exc){
 	        throw exc;
 	    }
 	}
